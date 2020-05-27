@@ -7,14 +7,14 @@ RUN apk update && apk upgrade && apk add --no-cache git nodejs bash npm
 # Get dependencies for Go part of build
 RUN go get -u github.com/jteeuwen/go-bindata/...
 
-WORKDIR /go/src/github.com/kubernetes-up-and-running/kuard
+WORKDIR /go/src/github.com/trstroem/kuard
 
 # Copy all sources in
 COPY . .
 
 # This is a set of variables that the build script expects
 ENV VERBOSE=0
-ENV PKG=github.com/kubernetes-up-and-running/kuard
+ENV PKG=github.com/trstroem/kuard
 ENV ARCH=amd64
 ENV VERSION=test
 
