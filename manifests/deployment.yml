@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "kuarcluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "kuarcluster"
+    spec:
+      containers:
+        - name: "kuarcluster"
+          image: "trondsaksregistry.azurecr.io/kuarcluster"
+          ports:
+          - containerPort: 80
